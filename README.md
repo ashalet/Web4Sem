@@ -15,3 +15,5 @@
 
 Скринкаст: [ссылка на Google.drive](https://drive.google.com/file/d/1X_PHlWfrk3YIHabDuyZoO3mhyJeTbMCO/view?usp=share_link)
 
+## План на 4 семестр:
+Google.Sheets: [(https://docs.google.com/document/d/18yE1v2YIIReXESnoISNLG5489z7Rz_b7/edit?usp=share_link&ouid=115636942954851968247&rtpof=true&sd=true)](https://docs.google.com/spreadsheets/d/1BGova1EnVmipniT5CQ5kveihuibuSvLSfweBEGMpdP4/edit#gid=0)
