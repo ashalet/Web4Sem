@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    REGISTER
+{% endblock %}
+
+{% block content %}
+    <div class="registerform">
+        <h1>REGISTER</h1>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">
+                        {{ message|safe }}
+                        <a href="#" class="close">✖</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form action="{% url 'account:register' %}" method="post">{% csrf_token %}
+            {{ register_form.as_p }}
+            <button type="submit" class="regbtn">OK</button>
+        </form>
+    </div>
+
+{% endblock %}

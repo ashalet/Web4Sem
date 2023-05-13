@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    api
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'portfolio:make_mailing' %}" method="post"> {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">ОТПРАВИТЬ</button>
+    </form>
+
+{% endblock %}

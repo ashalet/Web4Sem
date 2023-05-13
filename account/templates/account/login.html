@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+        {% else %}
+            <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
+
+    <div class="loginform">
+        <h1>LOGIN</h1>
+        <form method="post" action="{% url 'account:sign_in' %}">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <p>
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{{ form.username }}</td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{{ form.password }}</td>
+                    </p>
+                </tr>
+            </table>
+
+            <input type="submit" value="login" class="logbtn">
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+        <p><a href="{% url 'account:register' %}">Еще нет профиля?</a></p>
+    </div>
+
+
+
+{% endblock %}

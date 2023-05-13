@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    MAIN FRAME
+{% endblock %}
+
+{% block content %}
+
+    <div class="main">
+        <div class="container authornikita">
+            <img src="/static/portfolio/img/nikita.png" alt="Хозяин" class="nikita">
+            <div class="main-info-home">
+                <div class="info">
+                    <p style="font-size: 38px; margin-bottom: 10px">Вертеленко Никита</p>
+                    <p style="font-size: 20px">Опытный пользователь ПК, профессиональный пользователь программного
+                        обеспечения:
+                        CorelDraw, Adobe Illustrator, Blender 3D, 3Ds Max, Autocad, Компас 3D, Adobe Photoshop, Gimp,
+                        Paint
+                        tool Sai, Adobe InDisign, Anime Studio Pro, Manga Studio, Sony Vegas, Adobe After Effects, пакет
+                        Microsoft Office.</div>
+                <div class="home-nav">
+                    <a href="{% url 'portfolio:all_works' %}">Мои работы</a>
+                    <a href="{% url 'portfolio:blog' %}">Мой блог</a>
+                </div>
+            </div>
+        </div>
+
+
+            <a  class="teg-url" href="https://t.me/Wilv4rinBot" target="_blank">
+                <div class="telrel"> Рассылка в телеграмме</div>
+            </a>
+
+    </div>
+{% endblock %}

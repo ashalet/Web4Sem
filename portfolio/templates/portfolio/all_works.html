@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    ALL WORKS
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="container allworks">
+                {% for q in qs %}
+
+                    <a href="{% url 'portfolio:detail-work' pk=q.id %}">
+                        <div class="card">
+                            <img src="{% static q.image %}" alt="{{ q.name_of_work }}" width="300" height="300">
+                            <div class="works-descr">
+                                <h2>{{ q.name_of_work }}</h2>
+                                <p>Срок выполнения {{ q.duration }} дней</p>
+                            </div>
+                        </div>
+                    </a>
+
+                {% endfor %}
+        </div>
+    </div>
+{% endblock %}

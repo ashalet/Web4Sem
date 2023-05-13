@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <div class="container allworks down">
+                {% for post in post_list %}
+                    <a class="cardblog-url" href="{% url 'portfolio:detail-post' pk=post.id %}">
+                        <div class="cardblog works-descr ">
+                            <h2 class="blog-name">{{ post.title }}</h2>
+                            <p class="blog-descr"> Дата: {{ post.date }}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Detail Post
+{% endblock %}
+
+{% block content %}
+    <div class="container card-details down2">
+        {% for q in qs_post %}
+                <div class="main-details">
+{#                    <img src="{% static q.image %}" alt="{{ q.name_of_work }}" width="300" height="300">#}
+                    <div class="card-details-descr">
+                        <div class="main-main-details-descr">
+                            <h2>{{ q.title }}</h2>
+
+                            <p style="margin-top: 10px">Дата публикации {{ q.date }}</p>
+                        </div>
+                        <div class="maxmain-descr">
+                            <h3>Описание</h3>
+                            <a><br>{{ q.description }}</a>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+{% endblock %}

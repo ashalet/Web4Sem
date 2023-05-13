@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    MAIN FRAME
+{% endblock %}
+
+{% block content %}
+    <div class="container card-details">
+        {% for q in qs_asset %}
+            {% for work in qs_work %}
+                <div class="main-details">
+                    <img src="{% static q.image %}" alt="{{ q.name_of_work }}" width="300" height="300">
+                    <div class="card-details-descr">
+                        <div class="main-main-details-descr">
+                            <h2>{{ q.name_of_work }}</h2>
+                            {% if work.blender == True %}
+                                <img src="/static/portfolio/img/blender.png" alt="blender" width="50" height="50">
+                            {% endif %}
+                            {% if work.photoshop == True %}
+                                <img src="/static/portfolio/img/photoshop.png" alt="blender" width="50" height="50">
+                            {% endif %}
+                            {% if work.zbrush == True %}
+                                <img src="/static/portfolio/img/zbrush.png" alt="blender" width="50" height="50">
+                            {% endif %}
+                            {% if work.bdf == True %}
+                                <img src="/static/portfolio/img/bdf.png" alt="blender" width="50" height="50">
+                            {% endif %}
+                            <p>C {{ work.end_date }} по {{ work.start_date }}</p>
+                        </div>
+                        <div class="maxmain-descr">
+                            <h3>Описание</h3>
+                            <br><a>{{ work.description }}</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                {% for render in qs_render %}
+                    <div class="detailsphoto">
+                        <img src="{% static render.render_image_path %}" alt="{{ render.render_image_path }}"
+                             width="600"
+                             height="450">
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
